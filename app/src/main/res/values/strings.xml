@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">CoffeeBreakTime</string>
+    <string name="coffee_break">Coffee break</string>
+    <string name="feel_like_barista">Почувствуй себя бариста!</string>
+    <string name="any_coffee">Любой кофе под ваш заказ</string>
+    <string name="sing_in">Войти</string>
+    <string name="welcome">Добро пожаловать</string>
+    <string name="email_address">Адрес электронной почты</string>
+    <string name="password">Пароль</string>
+    <string name="forgot_password">Забыли пароль?</string>
+    <string name="sign_in_with">Войти с помощью</string>
+    <string name="first_time">"Впервые? "</string>
+    <string name="sign_up">Зарегистрироваться.</string>
+    <string name="sign_up_title">Зарегистрироваться</string>
+    <string name="create_an_account_here">Создать аккаунт здесь</string>
+    <string name="username">Имя пользователя</string>
+    <string name="phone_number">Номер мобильного телефона</string>
+    <string name="agree">Я принимаю условия\nпользовательского соглашения</string>
+    <string name="already_sign_up">"Уже зарегистрировались? "</string>
+    <string name="sign_in">Войти.</string>
 </resources>
