@@ -26,6 +26,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.coffeebreaktime.Navigation
 import com.example.coffeebreaktime.R
+import com.example.coffeebreaktime.common.ErrorAlertDialog
 import com.example.coffeebreaktime.common.ModifiedTextField
 import com.example.coffeebreaktime.common.roboto
 import com.example.coffeebreaktime.presentation.ForgotPassword.ForgotPasswordEvent
@@ -34,6 +35,14 @@ import com.example.coffeebreaktime.ui.theme.Theme
 @Composable
 fun ResetPasswordScreen(navController: NavController, vm: ResetPasswordVM = hiltViewModel()) {
     val state = vm.state.value
+    if (state.isComplete){
+        navController.navigate(Navigation.Menu)
+    }
+    if(state.error){
+        ErrorAlertDialog(error = stringResource(R.string.invalid_password)) {
+            vm.onEvent(ResetPasswordEvent.ErrorChange)
+        }
+    }
     Scaffold(modifier = Modifier
         .fillMaxSize()){
             innerPadding ->
@@ -85,16 +94,16 @@ fun ResetPasswordScreen(navController: NavController, vm: ResetPasswordVM = hilt
                 )
                 IconButton(
                     onClick = {
-                        if(state.password.isNotEmpty()){
-                            navController.navigate(Navigation.Menu)
-                        }
+                        vm.onEvent(ResetPasswordEvent.PasswordChange)
                     },
                     modifier = Modifier
                         .padding(top = 165.dp)
                         .align(Alignment.End)
                         .clip(CircleShape)
-                        .background(color = colorResource(R.color.mainColor),
-                            shape = CircleShape)
+                        .background(
+                            color = colorResource(R.color.mainColor),
+                            shape = CircleShape
+                        )
                         .size(64.dp),
                     colors = IconButtonDefaults.iconButtonColors(
                         containerColor = colorResource(R.color.mainColor)

@@ -27,6 +27,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.coffeebreaktime.Navigation
 import com.example.coffeebreaktime.R
+import com.example.coffeebreaktime.common.ErrorAlertDialog
 import com.example.coffeebreaktime.common.ModifiedTextField
 import com.example.coffeebreaktime.common.roboto
 import com.example.coffeebreaktime.ui.theme.Theme
@@ -34,6 +35,13 @@ import com.example.coffeebreaktime.ui.theme.Theme
 @Composable
 fun ForgotPasswordScreen(navController: NavController, vm: ForgotPasswordVM = hiltViewModel()) {
     val state = vm.state.value
+    if(state.error){
+        ErrorAlertDialog(
+            error = stringResource(R.string.invalid_email)
+        ) {
+            vm.onEvent(ForgotPasswordEvent.ErrorChange)
+        }
+    }
     if(state.isComplete){
         navController.navigate(Navigation.TwoFactorVerification)
     }
@@ -94,8 +102,10 @@ fun ForgotPasswordScreen(navController: NavController, vm: ForgotPasswordVM = hi
                         .padding(top = 153.dp)
                         .align(Alignment.End)
                         .clip(CircleShape)
-                        .background(color = colorResource(R.color.mainColor),
-                            shape = CircleShape)
+                        .background(
+                            color = colorResource(R.color.mainColor),
+                            shape = CircleShape
+                        )
                         .size(64.dp),
                     colors = IconButtonDefaults.iconButtonColors(
                         containerColor = colorResource(R.color.mainColor)

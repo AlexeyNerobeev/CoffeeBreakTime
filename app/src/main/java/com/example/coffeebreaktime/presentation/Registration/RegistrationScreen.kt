@@ -46,6 +46,9 @@ import com.example.coffeebreaktime.ui.theme.Theme
 @Composable
 fun RegistrationScreen(navController: NavController, vm: RegistrationVM = hiltViewModel()) {
     val state = vm.state.value
+    if (state.isComplete){
+        navController.navigate(Navigation.CafeScreen)
+    }
     val tfList = listOf(
         TextFieldData(
             value = state.name,

@@ -6,5 +6,6 @@ data class RegistrationState(
     val email: String = "",
     val password: String = "",
     val checked: Boolean = false,
-    val visualTransform: Boolean = true
+    val visualTransform: Boolean = true,
+    val isComplete: Boolean = false
 )
