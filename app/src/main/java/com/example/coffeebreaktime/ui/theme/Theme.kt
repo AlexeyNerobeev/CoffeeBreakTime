@@ -49,7 +49,13 @@ data class ThemeColors(
     val backIcon: Color = Color.Black,
     val verificationTf: Color = Color(0xFFB7BBC9),
     val retry: Color = Color(0xFF324A59),
-    val chooseCoffeeShop: Color = Color.White
+    val chooseCoffeeShop: Color = Color.White,
+    val menuWelcome: Color=  Color(0xFFA1A1A1),
+    val menuName: Color = Color(0xFF4F7993),
+    val menuBoxBackground: Color = Color(0xFF272D31),
+    val profileIconsBackground: Color = Color(0xFFF7F8FB),
+    val profileTitleColor: Color = Color(0xFF00183338).copy(alpha = 0.22f),
+    val profileMainText: Color = Color(0xFF324A59)
 )
 
 private val LocalTheme = staticCompositionLocalOf {
@@ -75,7 +81,13 @@ fun AppTheme(
             backIcon = Color(0xFF4F7993),
             verificationTf = Color(0xFF585A62),
             retry = Color(0xAAAAAA80).copy(alpha = 0.5f),
-            chooseCoffeeShop = Color(0xFF272D31)
+            chooseCoffeeShop = Color(0xFF272D31),
+            menuWelcome = Color(0xFFD8D8D8),
+            menuName = Color(0xFFD9D9D9),
+            menuBoxBackground = Color(0xFF334855),
+            profileIconsBackground = Color(0xFF444A4D),
+            profileTitleColor = Color(0xFF4F7993),
+            profileMainText = Color(0xFFAAAAAA)
         )
     }else{
         ThemeColors(
@@ -91,7 +103,13 @@ fun AppTheme(
             backIcon = Color.Black,
             verificationTf = Color(0xFFB7BBC9),
             retry = Color(0xFF324A59),
-            chooseCoffeeShop = Color.White
+            chooseCoffeeShop = Color.White,
+            menuWelcome = Color(0xFFA1A1A1),
+            menuName = Color(0xFF4F7993),
+            menuBoxBackground = Color(0xFF272D31),
+            profileIconsBackground = Color(0xFFF7F8FB),
+            profileTitleColor = Color(0xFF00183338).copy(alpha = 0.22f),
+            profileMainText = Color(0xFF324A59)
         )
     }
 

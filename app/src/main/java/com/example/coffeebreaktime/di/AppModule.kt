@@ -2,11 +2,18 @@ package com.example.coffeebreaktime.di
 
 import androidx.annotation.Size
 import com.example.coffeebreaktime.data.repositoryImplementation.AuthRepositoryImpl
+import com.example.coffeebreaktime.data.repositoryImplementation.CoffeeRepositoryImpl
+import com.example.coffeebreaktime.data.repositoryImplementation.ProfileRepositoryImpl
 import com.example.coffeebreaktime.domain.UseCase.AuthUseCase
+import com.example.coffeebreaktime.domain.UseCase.CreateProfileUseCase
+import com.example.coffeebreaktime.domain.UseCase.GetCoffeeListUseCase
+import com.example.coffeebreaktime.domain.UseCase.GetUserProfileUseCase
 import com.example.coffeebreaktime.domain.UseCase.IsEmailValidUseCase
 import com.example.coffeebreaktime.domain.UseCase.IsPasswordValidUseCase
 import com.example.coffeebreaktime.domain.UseCase.RegistrationUseCase
 import com.example.coffeebreaktime.domain.repository.AuthRepository
+import com.example.coffeebreaktime.domain.repository.CoffeeRepository
+import com.example.coffeebreaktime.domain.repository.ProfileRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -20,6 +27,42 @@ object AppModule {
     @Singleton
     fun provideAuthRepository(): AuthRepository{
         return AuthRepositoryImpl()
+    }
+
+    @Provides
+    @Singleton
+    fun provideCoffeeRepository(): CoffeeRepository{
+        return CoffeeRepositoryImpl()
+    }
+
+    @Provides
+    @Singleton
+    fun provideProfileRepository(): ProfileRepository{
+        return ProfileRepositoryImpl()
+    }
+
+    @Provides
+    @Singleton
+    fun provideGetUserProfileUseCase(
+        profileRepository: ProfileRepository
+    ): GetUserProfileUseCase{
+        return GetUserProfileUseCase(profileRepository)
+    }
+
+    @Provides
+    @Singleton
+    fun provideCreateProfileUseCase(
+        profileRepository: ProfileRepository
+    ): CreateProfileUseCase{
+        return CreateProfileUseCase(profileRepository)
+    }
+
+    @Provides
+    @Singleton
+    fun provideGetCoffeeListUseCase(
+        coffeeRepository: CoffeeRepository
+    ): GetCoffeeListUseCase{
+        return GetCoffeeListUseCase(coffeeRepository)
     }
 
     @Provides
