@@ -47,6 +47,7 @@ fun ModifiedTextField(
             .testTag(testTag)
             .padding(top = padding.dp)
             .fillMaxWidth(),
+        singleLine = true,
         colors = TextFieldDefaults.colors(
             focusedContainerColor = Color.Transparent,
             unfocusedContainerColor = Color.Transparent,

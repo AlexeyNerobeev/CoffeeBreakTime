@@ -113,7 +113,7 @@ fun AuthorizationScreen(navController: NavController, vm: AuthorizationVM = hilt
                         .padding(top = 27.dp)
                         .align(Alignment.CenterHorizontally)
                         .clickable {
-
+                            navController.navigate(Navigation.ForgotPassword)
                         }
                 )
             }

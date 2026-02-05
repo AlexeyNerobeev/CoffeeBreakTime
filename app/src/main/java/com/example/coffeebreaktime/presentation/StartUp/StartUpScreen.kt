@@ -11,12 +11,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.example.coffeebreaktime.Navigation
 import com.example.coffeebreaktime.R
 import com.example.coffeebreaktime.ui.theme.Theme
 
 @Composable
-fun StartUpScreen(navController: NavController) {
+fun StartUpScreen(navController: NavController, vm: StartUpVM = hiltViewModel()) {
+    val state = vm.state.value
+    if(state.next){
+        navController.navigate(Navigation.Menu)
+    }
     Scaffold(modifier = Modifier
         .fillMaxSize()) { innerPadding ->
         Column(modifier = Modifier

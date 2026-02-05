@@ -19,4 +19,8 @@
     <string name="agree">I accept the terms\nof the user agreement.</string>
     <string name="already_sign_up">"Have you already registered? "</string>
     <string name="sign_in">Sign in.</string>
+    <string name="enter_email">Введите адрес электронной почты</string>
+    <string name="check">Проверка</string>
+    <string name="enter_code">Введите код, который мы вам отправили на почту</string>
+    <string name="retry">Выслать заново через 00:30</string>
 </resources>
