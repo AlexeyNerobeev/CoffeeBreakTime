@@ -48,7 +48,8 @@ data class ThemeColors(
     val bottomSignUp: Color = Color(0xFF147F37),
     val backIcon: Color = Color.Black,
     val verificationTf: Color = Color(0xFFB7BBC9),
-    val retry: Color = Color(0xFF324A59)
+    val retry: Color = Color(0xFF324A59),
+    val chooseCoffeeShop: Color = Color.White
 )
 
 private val LocalTheme = staticCompositionLocalOf {
@@ -73,13 +74,14 @@ fun AppTheme(
             bottomSignUp = Color(0xFF4F7993),
             backIcon = Color(0xFF4F7993),
             verificationTf = Color(0xFF585A62),
-            retry = Color(0xFFAAAAAA80).copy(alpha = 0.5f)
+            retry = Color(0xAAAAAA80).copy(alpha = 0.5f),
+            chooseCoffeeShop = Color(0xFF272D31)
         )
     }else{
         ThemeColors(
             mainBackground = Color.White,
             oppositeColor = Color.Black,
-            circleShape = Color(0xFF324A5933).copy(alpha = 0.2f),
+            circleShape = Color(0x324A5933).copy(alpha = 0.2f),
             signInText = Color(0xFF14AC46),
             welcomeText = Color(0xFF324A59),
             tfIconColor = Color(0xFF147F37),
@@ -88,7 +90,8 @@ fun AppTheme(
             bottomSignUp = Color(0xFF147F37),
             backIcon = Color.Black,
             verificationTf = Color(0xFFB7BBC9),
-            retry = Color(0xFF324A59)
+            retry = Color(0xFF324A59),
+            chooseCoffeeShop = Color.White
         )
     }
 

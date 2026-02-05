@@ -29,6 +29,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.coffeebreaktime.Navigation
 import com.example.coffeebreaktime.R
+import com.example.coffeebreaktime.common.ErrorAlertDialog
 import com.example.coffeebreaktime.common.VerificationTextField
 import com.example.coffeebreaktime.common.VerificationTfData
 import com.example.coffeebreaktime.common.roboto
@@ -38,6 +39,15 @@ import com.example.coffeebreaktime.ui.theme.Theme
 @Composable
 fun TwoFactorVerificationScreen(navController: NavController, vm: TwoFactorVerificationVM = hiltViewModel()) {
     val state = vm.state.value
+
+    if(state.next){
+        navController.navigate(Navigation.ResetPassword)
+    }
+    if(state.error){
+        ErrorAlertDialog(error = stringResource(R.string.all_fields_must_be_filled_in)) {
+            vm.onEvent(TwoFactorVerificationEvent.ChangeError)
+        }
+    }
     val tfList = listOf(
         VerificationTfData(
             value = state.firstNum,
@@ -108,25 +118,34 @@ fun TwoFactorVerificationScreen(navController: NavController, vm: TwoFactorVerif
                         )
                     }
                 }
-                Text(text = stringResource(R.string.retry),
-                    color = Theme.colors.retry,
-                    fontWeight = FontWeight(400),
-                    fontFamily = roboto,
-                    fontSize = 14.sp,
-                    textAlign = TextAlign.Center,
-                    modifier = Modifier
-                        .padding(top = 46.dp)
-                        .align(Alignment.CenterHorizontally))
+                Row(modifier = Modifier
+                    .padding(top = 46.dp)
+                    .align(Alignment.CenterHorizontally)) {
+                    Text(text = stringResource(R.string.retry),
+                        color = Theme.colors.retry,
+                        fontWeight = FontWeight(400),
+                        fontFamily = roboto,
+                        fontSize = 14.sp,
+                        textAlign = TextAlign.Center)
+                    Text(text = state.seconds.toString(),
+                        color = Theme.colors.retry,
+                        fontWeight = FontWeight(400),
+                        fontFamily = roboto,
+                        fontSize = 14.sp,
+                        textAlign = TextAlign.Center)
+                }
                 IconButton(
                     onClick = {
-                        navController.navigate(Navigation.ResetPassword)
+                        vm.onEvent(TwoFactorVerificationEvent.GoNext)
                     },
                     modifier = Modifier
                         .padding(top = 153.dp)
                         .align(Alignment.End)
                         .clip(CircleShape)
-                        .background(color = colorResource(R.color.mainColor),
-                            shape = CircleShape)
+                        .background(
+                            color = colorResource(R.color.mainColor),
+                            shape = CircleShape
+                        )
                         .size(64.dp),
                     colors = IconButtonDefaults.iconButtonColors(
                         containerColor = colorResource(R.color.mainColor)

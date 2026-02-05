@@ -21,5 +21,10 @@
     <string name="enter_email">Введите адрес электронной почты</string>
     <string name="check">Проверка</string>
     <string name="enter_code">Введите код, который мы вам отправили\nна почту</string>
-    <string name="retry">Выслать заново через 00:30</string>
+    <string name="retry">Выслать заново через 00:</string>
+    <string name="choose_coffeee_shop">Выберите кофейню Coffee break</string>
+    <string name="error">Ошибка</string>
+    <string name="invalid_email">Неокрректная почта</string>
+    <string name="invalid_password">Некорректный пароль</string>
+    <string name="all_fields_must_be_filled_in">Все поля должны быть заполнены</string>
 </resources>

@@ -17,6 +17,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.coffeebreaktime.presentation.Authorization.AuthorizationScreen
+import com.example.coffeebreaktime.presentation.Cafe.CafeScreen
 import com.example.coffeebreaktime.presentation.ForgotPassword.ForgotPasswordScreen
 import com.example.coffeebreaktime.presentation.Menu.MenuScreen
 import com.example.coffeebreaktime.presentation.Registration.RegistrationScreen
@@ -65,6 +66,9 @@ class MainActivity : ComponentActivity() {
                     }
                     composable<Navigation.Menu> {
                         MenuScreen(navController)
+                    }
+                    composable<Navigation.CafeScreen> {
+                        CafeScreen(navController)
                     }
                 }
             }

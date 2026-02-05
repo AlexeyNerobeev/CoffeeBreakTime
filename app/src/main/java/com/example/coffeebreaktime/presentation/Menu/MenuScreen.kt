@@ -27,29 +27,7 @@ fun MenuScreen(navController: NavController) {
             .padding(innerPadding)
             .fillMaxSize()
             .background(Theme.colors.mainBackground)) {
-            Box(modifier = Modifier
-                .fillMaxSize()){
-                Image(painter = painterResource(R.drawable.map),
-                    contentDescription = null,
-                    contentScale = ContentScale.FillHeight,
-                    modifier = Modifier
-                        .fillMaxSize())
-                Box(modifier = Modifier
-                    .fillMaxSize(),
-                    contentAlignment = Alignment.BottomCenter){
-                    Column(modifier = Modifier
-                        .fillMaxWidth()) {
-                        IconButton(
-                            onClick = {
 
-                            }
-                        ) {
-                            Icon(painter = painterResource(R.drawable.target),
-                                contentDescription = null)
-                        }
-                    }
-                }
-            }
         }
     }
 }

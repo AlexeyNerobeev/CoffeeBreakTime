@@ -58,6 +58,9 @@ class RegistrationVM @Inject constructor(
                     try {
                         registrationUseCase.invoke(User(email = state.value.email,
                             password = state.value.password))
+                        _state.value = state.value.copy(
+                            isComplete = true
+                        )
                     } catch (ex: Exception){
                         Log.e("supabase", ex.message.toString())
                     }
