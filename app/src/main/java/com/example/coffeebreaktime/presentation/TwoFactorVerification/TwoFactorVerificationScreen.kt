@@ -39,6 +39,7 @@ import com.example.coffeebreaktime.ui.theme.Theme
 @Composable
 fun TwoFactorVerificationScreen(navController: NavController, vm: TwoFactorVerificationVM = hiltViewModel()) {
     val state = vm.state.value
+
     if(state.next){
         navController.navigate(Navigation.ResetPassword)
     }
