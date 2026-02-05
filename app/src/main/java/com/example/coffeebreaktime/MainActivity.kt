@@ -17,8 +17,12 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.coffeebreaktime.presentation.Authorization.AuthorizationScreen
+import com.example.coffeebreaktime.presentation.ForgotPassword.ForgotPasswordScreen
+import com.example.coffeebreaktime.presentation.Menu.MenuScreen
 import com.example.coffeebreaktime.presentation.Registration.RegistrationScreen
+import com.example.coffeebreaktime.presentation.ResetPassword.ResetPasswordScreen
 import com.example.coffeebreaktime.presentation.StartUp.StartUpScreen
+import com.example.coffeebreaktime.presentation.TwoFactorVerification.TwoFactorVerificationScreen
 import com.example.coffeebreaktime.presentation.Welcome.WelcomeScreen
 import com.example.coffeebreaktime.ui.theme.AppTheme
 import com.example.coffeebreaktime.ui.theme.CoffeeBreakTimeTheme
@@ -49,6 +53,18 @@ class MainActivity : ComponentActivity() {
                     }
                     composable<Navigation.StartUpScreen> {
                         StartUpScreen(navController)
+                    }
+                    composable<Navigation.ForgotPassword> {
+                        ForgotPasswordScreen(navController)
+                    }
+                    composable<Navigation.TwoFactorVerification> {
+                        TwoFactorVerificationScreen(navController)
+                    }
+                    composable<Navigation.ResetPassword> {
+                        ResetPasswordScreen(navController)
+                    }
+                    composable<Navigation.Menu> {
+                        MenuScreen(navController)
                     }
                 }
             }

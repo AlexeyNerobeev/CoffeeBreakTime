@@ -46,7 +46,9 @@ data class ThemeColors(
     val eyeColor: Color = Color.Black,
     val forgotPassword: Color = Color(0xFF147F37),
     val bottomSignUp: Color = Color(0xFF147F37),
-    val backIcon: Color = Color.Black
+    val backIcon: Color = Color.Black,
+    val verificationTf: Color = Color(0xFFB7BBC9),
+    val retry: Color = Color(0xFF324A59)
 )
 
 private val LocalTheme = staticCompositionLocalOf {
@@ -69,7 +71,9 @@ fun AppTheme(
             eyeColor = Color(0xFFA8A8A8),
             forgotPassword = Color(0xFF324A59),
             bottomSignUp = Color(0xFF4F7993),
-            backIcon = Color(0xFF4F7993)
+            backIcon = Color(0xFF4F7993),
+            verificationTf = Color(0xFF585A62),
+            retry = Color(0xFFAAAAAA80).copy(alpha = 0.5f)
         )
     }else{
         ThemeColors(
@@ -82,7 +86,9 @@ fun AppTheme(
             eyeColor = Color.Black,
             forgotPassword = Color(0xFF147F37),
             bottomSignUp = Color(0xFF147F37),
-            backIcon = Color.Black
+            backIcon = Color.Black,
+            verificationTf = Color(0xFFB7BBC9),
+            retry = Color(0xFF324A59)
         )
     }
 
