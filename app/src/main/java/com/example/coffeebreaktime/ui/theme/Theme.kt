@@ -39,7 +39,7 @@ private val LightColorScheme = lightColorScheme(
 data class ThemeColors(
     val mainBackground: Color = Color.White,
     val oppositeColor: Color = Color.Black,
-    val circleShape: Color = Color(0xFF324A5933).copy(alpha = 0.2f),
+    val circleShape: Color = Color(0x324A5933).copy(alpha = 0.2f),
     val signInText: Color = Color(0xFF14AC46),
     val welcomeText: Color = Color(0xFF324A59),
     val tfIconColor: Color = Color(0xFF147F37),
@@ -54,7 +54,7 @@ data class ThemeColors(
     val menuName: Color = Color(0xFF4F7993),
     val menuBoxBackground: Color = Color(0xFF272D31),
     val profileIconsBackground: Color = Color(0xFFF7F8FB),
-    val profileTitleColor: Color = Color(0xFF00183338).copy(alpha = 0.22f),
+    val profileTitleColor: Color = Color(0x00183338).copy(alpha = 0.22f),
     val profileMainText: Color = Color(0xFF324A59)
 )
 
@@ -108,7 +108,7 @@ fun AppTheme(
             menuName = Color(0xFF4F7993),
             menuBoxBackground = Color(0xFF272D31),
             profileIconsBackground = Color(0xFFF7F8FB),
-            profileTitleColor = Color(0xFF00183338).copy(alpha = 0.22f),
+            profileTitleColor = Color(0x00183338).copy(alpha = 0.22f),
             profileMainText = Color(0xFF324A59)
         )
     }

@@ -1,7 +1,7 @@
 package com.example.coffeebreaktime.presentation.Menu
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -44,32 +44,39 @@ import com.example.coffeebreaktime.ui.theme.Theme
 @Composable
 fun MenuScreen(navController: NavController, vm: MenuVM = hiltViewModel()) {
     val state = vm.state.value
-    Scaffold(modifier = Modifier
-        .fillMaxSize()) { innerPadding ->
-        Column(modifier = Modifier
-            .padding(innerPadding)
+    Scaffold(
+        modifier = Modifier
             .fillMaxSize()
-            .background(Theme.colors.mainBackground)) {
-            Row(modifier = Modifier
-                .padding(top = 27.dp)
-                .padding(start = 26.dp)
-                .padding(end = 33.dp)
-                .fillMaxWidth(),
+    ) { innerPadding ->
+        Column(
+            modifier = Modifier
+                .padding(innerPadding)
+                .fillMaxSize()
+                .background(Theme.colors.mainBackground)
+        ) {
+            Row(
+                modifier = Modifier
+                    .padding(top = 27.dp)
+                    .padding(start = 26.dp)
+                    .padding(end = 33.dp)
+                    .fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween
-            ){
-                Column{
-                    Text(text = stringResource(R.string.welcome),
-                        color= Theme.colors.menuWelcome,
+            ) {
+                Column {
+                    Text(
+                        text = stringResource(R.string.welcome),
+                        color = Theme.colors.menuWelcome,
                         fontWeight = FontWeight(600),
                         fontFamily = roboto,
-                        fontSize =  14.sp
+                        fontSize = 14.sp
                     )
-                    Text(text = "Алексей",
-                        color= Theme.colors.menuName,
+                    Text(
+                        text = "Алексей",
+                        color = Theme.colors.menuName,
                         fontWeight = FontWeight(500),
                         fontFamily = roboto,
-                        fontSize =  18.sp
+                        fontSize = 18.sp
                     )
                 }
                 Row(verticalAlignment = Alignment.CenterVertically) {
@@ -78,48 +85,57 @@ fun MenuScreen(navController: NavController, vm: MenuVM = hiltViewModel()) {
 
                         }
                     ) {
-                        Icon(painter = painterResource(R.drawable.cart_icon),
+                        Icon(
+                            painter = painterResource(R.drawable.cart_icon),
                             contentDescription = null,
-                            tint = Theme.colors.backIcon)
+                            tint = Theme.colors.backIcon
+                        )
                     }
-                    IconButton(
-                        onClick = {
-
-                        }
-                    ) {
-                        Icon(painter = painterResource(R.drawable.profile_icon),
-                            contentDescription = null,
-                            tint = Theme.colors.backIcon,
-                            modifier = Modifier
-                                .padding(start = 20.dp)
-                                .size(26.dp))
-                    }
+                    Icon(
+                        painter = painterResource(R.drawable.profile_icon),
+                        contentDescription = null,
+                        tint = Theme.colors.backIcon,
+                        modifier = Modifier
+                            .padding(start = 20.dp)
+                            .size(26.dp)
+                            .clickable{
+                                navController.navigate(Navigation.Profile)
+                            }
+                    )
                 }
             }
-            Box(modifier = Modifier
-                .padding(top = 7.dp)
-                .fillMaxSize()
-                .background(
-                    Theme.colors.menuBoxBackground,
-                    shape = RoundedCornerShape(
-                        topStart = 25.dp,
-                        topEnd = 25.dp
+            Box(
+                modifier = Modifier
+                    .padding(top = 7.dp)
+                    .fillMaxSize()
+                    .background(
+                        Theme.colors.menuBoxBackground,
+                        shape = RoundedCornerShape(
+                            topStart = 25.dp,
+                            topEnd = 25.dp
+                        )
                     )
-                )){
-                Column(modifier = Modifier
-                    .padding(top = 16.dp)
-                    .padding(horizontal = 25.dp)
-                    .fillMaxWidth()) {
-                    Text(text = stringResource(R.string.choose_your_coffee),
+            ) {
+                Column(
+                    modifier = Modifier
+                        .padding(top = 16.dp)
+                        .padding(horizontal = 25.dp)
+                        .fillMaxWidth()
+                ) {
+                    Text(
+                        text = stringResource(R.string.choose_your_coffee),
                         color = Color.White,
                         fontFamily = roboto,
                         fontWeight = FontWeight(500),
-                        fontSize = 16.sp)
-                    if (state.load){
-                        CircularProgressIndicator(color = Color.White,
+                        fontSize = 16.sp
+                    )
+                    if (state.load) {
+                        CircularProgressIndicator(
+                            color = Color.White,
                             modifier = Modifier
                                 .padding(top = 29.dp)
-                                .align(Alignment.CenterHorizontally))
+                                .align(Alignment.CenterHorizontally)
+                        )
                     } else {
                         LazyVerticalStaggeredGrid(
                             columns = StaggeredGridCells.Fixed(2),
@@ -141,27 +157,30 @@ fun MenuScreen(navController: NavController, vm: MenuVM = hiltViewModel()) {
                                         modifier = Modifier
                                             .padding(top = 25.dp)
                                             .padding(bottom = 7.dp)
-                                            .padding(horizontal = 26.dp)
                                             .fillMaxWidth()
                                     ) {
-                                        AsyncImage(
-                                            model = item.image,
-                                            contentDescription = null,
-                                            contentScale = ContentScale.Fit,
-                                            modifier = Modifier
-                                                .height(85.dp)
-                                                .align(Alignment.CenterHorizontally)
-                                        )
-                                        Text(
-                                            text = item.name,
-                                            color = Color.Black,
-                                            fontWeight = FontWeight(500),
-                                            fontSize = 14.sp,
-                                            fontFamily = dmSans,
-                                            modifier = Modifier
-                                                .align(Alignment.CenterHorizontally)
-                                                .padding(top = 12.dp)
-                                        )
+                                        Column(modifier = Modifier
+                                            .padding(horizontal = 26.dp)
+                                            .align(Alignment.CenterHorizontally)) {
+                                            AsyncImage(
+                                                model = item.image,
+                                                contentDescription = null,
+                                                contentScale = ContentScale.Fit,
+                                                modifier = Modifier
+                                                    .height(85.dp)
+                                                    .align(Alignment.CenterHorizontally)
+                                            )
+                                            Text(
+                                                text = item.name,
+                                                color = Color.Black,
+                                                fontWeight = FontWeight(500),
+                                                fontSize = 14.sp,
+                                                fontFamily = dmSans,
+                                                modifier = Modifier
+                                                    .align(Alignment.CenterHorizontally)
+                                                    .padding(top = 12.dp)
+                                            )
+                                        }
                                         Text(
                                             text = item.price.toString() + "₽",
                                             color = Color.Black,
@@ -187,6 +206,14 @@ fun MenuScreen(navController: NavController, vm: MenuVM = hiltViewModel()) {
                 }
             }
         }
-        BottomNavigationBar(navController, Navigation.Menu)
+        Box(modifier = Modifier
+            .padding(innerPadding)
+            .fillMaxSize(),
+            contentAlignment = Alignment.BottomCenter) {
+            BottomNavigationBar(
+                navController,
+                Navigation.Menu
+            )
+        }
     }
 }

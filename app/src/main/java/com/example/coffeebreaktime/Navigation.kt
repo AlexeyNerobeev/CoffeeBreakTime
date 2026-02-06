@@ -29,4 +29,13 @@ sealed class Navigation {
 
     @Serializable
     data object CafeScreen: Navigation()
+
+    @Serializable
+    data object Profile: Navigation()
+
+    @Serializable
+    data object MyOrderCurrent: Navigation()
+
+    @Serializable
+    data object Reward: Navigation()
 }

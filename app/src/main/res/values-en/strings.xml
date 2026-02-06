@@ -28,12 +28,16 @@
     <string name="invalid_email">Invalid email</string>
     <string name="invalid_password">Invalid password</string>
     <string name="all_fields_must_be_filled_in">All fields must be filled in</string>
-    <string name="choose_your_coffee">Выберите Ваш кофе</string>
-    <string name="profile">Профиль</string>
-    <string name="name">Имя</string>
-    <string name="phone">Номер телефона</string>
-    <string name="email">Почта</string>
-    <string name="magic_coffee">Адрес кофейни Magic Coffee</string>
+    <string name="choose_your_coffee">Choose your coffee</string>
+    <string name="profile">Profile</string>
+    <string name="name">Name</string>
+    <string name="phone">Phone number</string>
+    <string name="email">Email</string>
+    <string name="magic_coffee">Coffee shop address Magic Coffee</string>
     <string name="qr_code">QR-code</string>
-    <string name="to_receive_an_order">Для получения заказа</string>
+    <string name="to_receive_an_order">To receive an order</string>
+    <string name="reward">Reward</string>
+    <string name="loyalty_card">Loyalty Card</string>
+    <string name="my_points">My points:</string>
+    <string name="pay_points">Pay with points</string>
 </resources>

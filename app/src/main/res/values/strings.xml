@@ -35,4 +35,8 @@
     <string name="magic_coffee">Адрес кофейни Magic Coffee</string>
     <string name="qr_code">QR-code</string>
     <string name="to_receive_an_order">Для получения заказа</string>
+    <string name="reward">Вознаграждение</string>
+    <string name="loyalty_card">Карта лояльности</string>
+    <string name="my_points">Мои баллы:</string>
+    <string name="pay_points">Оплатить баллами</string>
 </resources>

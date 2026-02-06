@@ -64,7 +64,8 @@ class RegistrationVM @Inject constructor(
                         createProfileUseCase.invoke(Profile(
                             name = state.value.name,
                             phone = state.value.phone,
-                            address = ""
+                            email = state.value.email,
+                            address = "-"
                         ))
                         _state.value = state.value.copy(
                             isComplete = true

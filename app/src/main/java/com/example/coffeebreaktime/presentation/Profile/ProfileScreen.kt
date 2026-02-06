@@ -93,19 +93,21 @@ fun ProfileScreen(navController: NavController, vm: ProfileVM = hiltViewModel())
                     fontWeight = FontWeight(500),
                     modifier = Modifier
                         .align(Alignment.TopCenter))
-                Column(modifier = Modifier
+            }
+            Column(
+                modifier = Modifier
                     .padding(top = 29.dp)
                     .padding(horizontal = 33.dp)
-                    .fillMaxWidth()) {
-                    for(item in profileDataList){
-                        ProfileRow(
-                            icon = item.icon,
-                            title = item.title,
-                            mainText = item.mainText,
-                            padding = item.padding,
-                            editIcon = item.editIcon
-                        )
-                    }
+                    .fillMaxWidth()
+            ) {
+                for (item in profileDataList) {
+                    ProfileRow(
+                        icon = item.icon,
+                        title = item.title,
+                        mainText = item.mainText,
+                        padding = item.padding,
+                        editIcon = item.editIcon
+                    )
                 }
             }
         }
