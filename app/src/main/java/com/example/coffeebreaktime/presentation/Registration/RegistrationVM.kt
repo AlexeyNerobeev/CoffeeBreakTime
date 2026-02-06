@@ -6,7 +6,9 @@ import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.coffeebreaktime.domain.UseCase.CreateProfileUseCase
 import com.example.coffeebreaktime.domain.UseCase.RegistrationUseCase
+import com.example.coffeebreaktime.domain.model.Profile
 import com.example.coffeebreaktime.domain.model.User
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -15,7 +17,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class RegistrationVM @Inject constructor(
-    private val registrationUseCase: RegistrationUseCase
+    private val registrationUseCase: RegistrationUseCase,
+    private val createProfileUseCase: CreateProfileUseCase
 ): ViewModel() {
     private val _state = mutableStateOf(RegistrationState())
     val state: State<RegistrationState> = _state
@@ -58,6 +61,12 @@ class RegistrationVM @Inject constructor(
                     try {
                         registrationUseCase.invoke(User(email = state.value.email,
                             password = state.value.password))
+                        createProfileUseCase.invoke(Profile(
+                            name = state.value.name,
+                            phone = state.value.phone,
+                            email = state.value.email,
+                            address = "-"
+                        ))
                         _state.value = state.value.copy(
                             isComplete = true
                         )

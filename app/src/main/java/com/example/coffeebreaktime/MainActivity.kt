@@ -20,8 +20,11 @@ import com.example.coffeebreaktime.presentation.Authorization.AuthorizationScree
 import com.example.coffeebreaktime.presentation.Cafe.CafeScreen
 import com.example.coffeebreaktime.presentation.ForgotPassword.ForgotPasswordScreen
 import com.example.coffeebreaktime.presentation.Menu.MenuScreen
+import com.example.coffeebreaktime.presentation.MyOrderCurrent.MyOrderCurrentScreen
+import com.example.coffeebreaktime.presentation.Profile.ProfileScreen
 import com.example.coffeebreaktime.presentation.Registration.RegistrationScreen
 import com.example.coffeebreaktime.presentation.ResetPassword.ResetPasswordScreen
+import com.example.coffeebreaktime.presentation.Reward.RewardScreen
 import com.example.coffeebreaktime.presentation.StartUp.StartUpScreen
 import com.example.coffeebreaktime.presentation.TwoFactorVerification.TwoFactorVerificationScreen
 import com.example.coffeebreaktime.presentation.Welcome.WelcomeScreen
@@ -69,6 +72,15 @@ class MainActivity : ComponentActivity() {
                     }
                     composable<Navigation.CafeScreen> {
                         CafeScreen(navController)
+                    }
+                    composable<Navigation.Profile> {
+                        ProfileScreen(navController)
+                    }
+                    composable<Navigation.MyOrderCurrent> {
+                        MyOrderCurrentScreen(navController)
+                    }
+                    composable<Navigation.Reward> {
+                        RewardScreen(navController)
                     }
                 }
             }
