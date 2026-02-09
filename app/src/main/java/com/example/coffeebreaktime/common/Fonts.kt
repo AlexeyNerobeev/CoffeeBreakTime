@@ -25,3 +25,9 @@ val roboto = FontFamily(
         resId = R.font.roboto_regular
     )
 )
+
+val montserrat = FontFamily(
+    Font(
+        resId = R.font.montserrat_regular
+    )
+)

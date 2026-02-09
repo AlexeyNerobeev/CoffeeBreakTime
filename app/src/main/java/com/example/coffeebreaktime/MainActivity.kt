@@ -17,10 +17,14 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.coffeebreaktime.presentation.Authorization.AuthorizationScreen
+import com.example.coffeebreaktime.presentation.Barista.BaristaScreen
 import com.example.coffeebreaktime.presentation.Cafe.CafeScreen
+import com.example.coffeebreaktime.presentation.CoffeeCountry.CoffeeCountryScreen
+import com.example.coffeebreaktime.presentation.Designer.DesignerScreen
 import com.example.coffeebreaktime.presentation.ForgotPassword.ForgotPasswordScreen
 import com.example.coffeebreaktime.presentation.Menu.MenuScreen
 import com.example.coffeebreaktime.presentation.MyOrderCurrent.MyOrderCurrentScreen
+import com.example.coffeebreaktime.presentation.OrderOptions.OrderOptionsScreen
 import com.example.coffeebreaktime.presentation.Profile.ProfileScreen
 import com.example.coffeebreaktime.presentation.Registration.RegistrationScreen
 import com.example.coffeebreaktime.presentation.ResetPassword.ResetPasswordScreen
@@ -81,6 +85,18 @@ class MainActivity : ComponentActivity() {
                     }
                     composable<Navigation.Reward> {
                         RewardScreen(navController)
+                    }
+                    composable<Navigation.OrderOptions> {
+                        OrderOptionsScreen(navController)
+                    }
+                    composable<Navigation.Barista> {
+                        BaristaScreen(navController)
+                    }
+                    composable<Navigation.Designer> {
+                        DesignerScreen(navController)
+                    }
+                    composable<Navigation.Country> {
+                        CoffeeCountryScreen(navController)
                     }
                 }
             }

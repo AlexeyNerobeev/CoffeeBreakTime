@@ -152,6 +152,9 @@ fun MenuScreen(navController: NavController, vm: MenuVM = hiltViewModel()) {
                                             color = Color.White,
                                             shape = RoundedCornerShape(15.dp)
                                         )
+                                        .clickable{
+                                            navController.navigate(Navigation.OrderOptions)
+                                        }
                                 ) {
                                     Column(
                                         modifier = Modifier
