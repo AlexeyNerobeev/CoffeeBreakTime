@@ -16,10 +16,12 @@ import androidx.navigation.NavHost
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.coffeebreaktime.presentation.Additives.AdditivesScreen
 import com.example.coffeebreaktime.presentation.Authorization.AuthorizationScreen
 import com.example.coffeebreaktime.presentation.Barista.BaristaScreen
 import com.example.coffeebreaktime.presentation.Cafe.CafeScreen
 import com.example.coffeebreaktime.presentation.CoffeeCountry.CoffeeCountryScreen
+import com.example.coffeebreaktime.presentation.CoffeeType.CoffeeTypeScreen
 import com.example.coffeebreaktime.presentation.Designer.DesignerScreen
 import com.example.coffeebreaktime.presentation.ForgotPassword.ForgotPasswordScreen
 import com.example.coffeebreaktime.presentation.Menu.MenuScreen
@@ -97,6 +99,12 @@ class MainActivity : ComponentActivity() {
                     }
                     composable<Navigation.Country> {
                         CoffeeCountryScreen(navController)
+                    }
+                    composable<Navigation.CoffeeTypeScreen> {
+                        CoffeeTypeScreen(navController)
+                    }
+                    composable<Navigation.AdditivesScreen> {
+                        AdditivesScreen(navController)
                     }
                 }
             }

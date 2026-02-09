@@ -1,9 +1,11 @@
 package com.example.coffeebreaktime.di
 
 import androidx.annotation.Size
+import com.example.coffeebreaktime.data.repositoryImplementation.AdditivesRepositoryImpl
 import com.example.coffeebreaktime.data.repositoryImplementation.AuthRepositoryImpl
 import com.example.coffeebreaktime.data.repositoryImplementation.BaristaRepositoryImpl
 import com.example.coffeebreaktime.data.repositoryImplementation.CoffeeRepositoryImpl
+import com.example.coffeebreaktime.data.repositoryImplementation.CoffeeTypeRepositoryImpl
 import com.example.coffeebreaktime.data.repositoryImplementation.CountryRepositoryImpl
 import com.example.coffeebreaktime.data.repositoryImplementation.ProfileRepositoryImpl
 import com.example.coffeebreaktime.domain.UseCase.AuthUseCase
@@ -14,9 +16,11 @@ import com.example.coffeebreaktime.domain.UseCase.GetUserProfileUseCase
 import com.example.coffeebreaktime.domain.UseCase.IsEmailValidUseCase
 import com.example.coffeebreaktime.domain.UseCase.IsPasswordValidUseCase
 import com.example.coffeebreaktime.domain.UseCase.RegistrationUseCase
+import com.example.coffeebreaktime.domain.repository.AdditivesRepository
 import com.example.coffeebreaktime.domain.repository.AuthRepository
 import com.example.coffeebreaktime.domain.repository.BaristaRepository
 import com.example.coffeebreaktime.domain.repository.CoffeeRepository
+import com.example.coffeebreaktime.domain.repository.CoffeeTypeRepository
 import com.example.coffeebreaktime.domain.repository.CountryRepository
 import com.example.coffeebreaktime.domain.repository.ProfileRepository
 import dagger.Module
@@ -56,6 +60,18 @@ object AppModule {
     @Singleton
     fun provideCountryRepository(): CountryRepository{
         return CountryRepositoryImpl()
+    }
+
+    @Provides
+    @Singleton
+    fun provideCoffeeTypeRepository(): CoffeeTypeRepository{
+        return CoffeeTypeRepositoryImpl()
+    }
+
+    @Provides
+    @Singleton
+    fun provideAdditivesRepository(): AdditivesRepository{
+        return AdditivesRepositoryImpl()
     }
 
     @Provides

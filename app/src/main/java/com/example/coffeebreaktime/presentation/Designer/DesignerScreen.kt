@@ -94,7 +94,7 @@ fun DesignerScreen(navController: NavController) {
                     modifier = Modifier
                         .padding(top = 14.dp)
                         .clickable {
-
+                            navController.navigate(Navigation.AdditivesScreen)
                         })
 
             }

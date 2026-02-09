@@ -1,9 +1,8 @@
-package com.example.coffeebreaktime.presentation.CoffeeCountry
+package com.example.coffeebreaktime.presentation.CoffeeType
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -34,13 +33,19 @@ import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import com.example.coffeebreaktime.Navigation
 import com.example.coffeebreaktime.R
+import com.example.coffeebreaktime.common.ErrorAlertDialog
 import com.example.coffeebreaktime.common.dmSans
 import com.example.coffeebreaktime.common.roboto
 import com.example.coffeebreaktime.ui.theme.Theme
 
 @Composable
-fun CoffeeCountryScreen(navController: NavController, vm: CoffeeCountyVM = hiltViewModel()) {
+fun CoffeeTypeScreen(navController: NavController, vm: CoffeeTypeVM = hiltViewModel()) {
     val state = vm.state.value
+    if(state.error){
+        ErrorAlertDialog(error = stringResource(R.string.error)) {
+            vm.onEvent(CoffeeTypeEvent.ChangeError)
+        }
+    }
     Scaffold(modifier = Modifier
         .fillMaxSize()) { innerPadding ->
         Column(modifier = Modifier
@@ -71,7 +76,7 @@ fun CoffeeCountryScreen(navController: NavController, vm: CoffeeCountyVM = hiltV
                         )
                     }
                     Text(
-                        text = stringResource(R.string.order_constructor),
+                        text = stringResource(R.string.choose_countrytype),
                         color = Theme.colors.orderOptionsTitle,
                         fontWeight = FontWeight(500),
                         fontFamily = roboto,
@@ -89,7 +94,7 @@ fun CoffeeCountryScreen(navController: NavController, vm: CoffeeCountyVM = hiltV
                         )
                     }
                 }
-                Text(text = stringResource(R.string.choose_country),
+                Text(text = stringResource(R.string.choose_coffee_type),
                     color = Theme.colors.backIcon,
                     fontFamily = roboto,
                     fontWeight = FontWeight(400),
@@ -108,11 +113,11 @@ fun CoffeeCountryScreen(navController: NavController, vm: CoffeeCountyVM = hiltV
                         horizontalArrangement = Arrangement.spacedBy(20.dp),
                         verticalItemSpacing = 28.dp
                     ) {
-                        items(state.countryLis) { item ->
+                        items(state.coffeeList) { item ->
                             Column(
                                 modifier = Modifier
                                     .clickable {
-                                        navController.navigate(Navigation.CoffeeTypeScreen)
+                                        navController.navigate(Navigation.Designer)
                                     }) {
                                 AsyncImage(
                                     model = item.image,

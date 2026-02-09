@@ -55,4 +55,7 @@
     <string name="additives">Добавки</string>
     <string name="order_constructor">Конструктор заказа</string>
     <string name="choose_country">Выберите страну и сорт кофе</string>
+    <string name="choose_countrytype">Выберите страну</string>
+    <string name="choose_coffee_type">Выберите сорт кофе</string>
+    <string name="choose_additive">Выберите добавку</string>
 </resources>

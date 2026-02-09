@@ -1,9 +1,8 @@
-package com.example.coffeebreaktime.presentation.CoffeeCountry
+package com.example.coffeebreaktime.presentation.Additives
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,6 +12,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.staggeredgrid.LazyVerticalStaggeredGrid
 import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
 import androidx.compose.foundation.lazy.staggeredgrid.items
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
@@ -34,13 +34,19 @@ import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import com.example.coffeebreaktime.Navigation
 import com.example.coffeebreaktime.R
+import com.example.coffeebreaktime.common.ErrorAlertDialog
 import com.example.coffeebreaktime.common.dmSans
 import com.example.coffeebreaktime.common.roboto
 import com.example.coffeebreaktime.ui.theme.Theme
 
 @Composable
-fun CoffeeCountryScreen(navController: NavController, vm: CoffeeCountyVM = hiltViewModel()) {
+fun AdditivesScreen(navController: NavController, vm: AdditivesVM = hiltViewModel()) {
     val state = vm.state.value
+    if(state.error){
+        ErrorAlertDialog(error = stringResource(R.string.error)) {
+            vm.onEvent(AdditivesEvent.ChangeError)
+        }
+    }
     Scaffold(modifier = Modifier
         .fillMaxSize()) { innerPadding ->
         Column(modifier = Modifier
@@ -89,7 +95,7 @@ fun CoffeeCountryScreen(navController: NavController, vm: CoffeeCountyVM = hiltV
                         )
                     }
                 }
-                Text(text = stringResource(R.string.choose_country),
+                Text(text = stringResource(R.string.choose_additive),
                     color = Theme.colors.backIcon,
                     fontFamily = roboto,
                     fontWeight = FontWeight(400),
@@ -108,11 +114,11 @@ fun CoffeeCountryScreen(navController: NavController, vm: CoffeeCountyVM = hiltV
                         horizontalArrangement = Arrangement.spacedBy(20.dp),
                         verticalItemSpacing = 28.dp
                     ) {
-                        items(state.countryLis) { item ->
+                        items(state.additivesList) { item ->
                             Column(
                                 modifier = Modifier
                                     .clickable {
-                                        navController.navigate(Navigation.CoffeeTypeScreen)
+                                        navController.navigate(Navigation.Designer)
                                     }) {
                                 AsyncImage(
                                     model = item.image,

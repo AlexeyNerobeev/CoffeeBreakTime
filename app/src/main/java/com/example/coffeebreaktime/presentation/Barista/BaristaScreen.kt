@@ -1,6 +1,7 @@
 package com.example.coffeebreaktime.presentation.Barista
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -108,17 +109,23 @@ fun BaristaScreen(navController: NavController, vm: BaristaVM = hiltViewModel())
                 if(state.load){
                     CircularProgressIndicator(color = Theme.colors.oppositeColor)
                 } else {
-                    LazyColumn {
+                    LazyColumn(modifier = Modifier
+                        .padding(top = 17.dp)) {
                         items(state.baristaList) { item ->
                             Box(
                                 modifier = Modifier
                                     .padding(bottom = 20.dp)
+                                    .shadow(elevation = 26.dp, shape = RoundedCornerShape(22.dp),
+                                        clip = false,
+                                        spotColor = Color(0x5A6CEA12).copy(alpha = 0.07f))
                                     .background(
                                         Theme.colors.baristaBox,
                                         shape = RoundedCornerShape(22.dp)
                                     )
-                                    .shadow(elevation = 26.dp, shape = RoundedCornerShape(22.dp))
                                     .fillMaxWidth()
+                                    .clickable{
+                                        navController.navigate(Navigation.Designer)
+                                    }
                             ) {
                                 Row(
                                     modifier = Modifier
@@ -136,7 +143,7 @@ fun BaristaScreen(navController: NavController, vm: BaristaVM = hiltViewModel())
                                             modifier = Modifier
                                                 .size(62.dp)
                                                 .clip(RoundedCornerShape(16.dp)),
-                                            contentScale = ContentScale.Crop
+                                            contentScale = ContentScale.Fit
                                         )
                                         Column(
                                             modifier = Modifier
@@ -179,6 +186,7 @@ fun BaristaScreen(navController: NavController, vm: BaristaVM = hiltViewModel())
             }
         }
         Box(modifier = Modifier
+            .padding(innerPadding)
             .fillMaxSize(),
             contentAlignment = Alignment.BottomCenter){
             BottomNavigationBar(navController, Navigation.Menu)
