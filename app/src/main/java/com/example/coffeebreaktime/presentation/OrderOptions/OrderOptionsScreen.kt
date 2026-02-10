@@ -511,7 +511,7 @@ fun OrderOptionsScreen(navController: NavController, vm: OrderOptionsVM = hiltVi
                 }
                 Button(
                     onClick = {
-
+                        navController.navigate(Navigation.MyOrder)
                     },
                     modifier = Modifier
                         .padding(top = 15.dp)

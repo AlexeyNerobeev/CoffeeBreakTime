@@ -56,4 +56,7 @@ sealed class Navigation {
 
     @Serializable
     data object AdditivesScreen: Navigation()
+
+    @Serializable
+    data object MyOrder: Navigation()
 }

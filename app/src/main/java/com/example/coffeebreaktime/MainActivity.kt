@@ -25,6 +25,7 @@ import com.example.coffeebreaktime.presentation.CoffeeType.CoffeeTypeScreen
 import com.example.coffeebreaktime.presentation.Designer.DesignerScreen
 import com.example.coffeebreaktime.presentation.ForgotPassword.ForgotPasswordScreen
 import com.example.coffeebreaktime.presentation.Menu.MenuScreen
+import com.example.coffeebreaktime.presentation.MyOrder.MyOrderScreen
 import com.example.coffeebreaktime.presentation.MyOrderCurrent.MyOrderCurrentScreen
 import com.example.coffeebreaktime.presentation.OrderOptions.OrderOptionsScreen
 import com.example.coffeebreaktime.presentation.Profile.ProfileScreen
@@ -105,6 +106,9 @@ class MainActivity : ComponentActivity() {
                     }
                     composable<Navigation.AdditivesScreen> {
                         AdditivesScreen(navController)
+                    }
+                    composable<Navigation.MyOrder> {
+                        MyOrderScreen(navController)
                     }
                 }
             }

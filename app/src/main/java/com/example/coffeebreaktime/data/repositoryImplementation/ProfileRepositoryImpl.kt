@@ -6,6 +6,7 @@ import com.example.coffeebreaktime.domain.model.User
 import com.example.coffeebreaktime.domain.repository.ProfileRepository
 import io.github.jan.supabase.auth.auth
 import io.github.jan.supabase.postgrest.postgrest
+import io.github.jan.supabase.postgrest.query.Columns
 
 class ProfileRepositoryImpl: ProfileRepository {
     override suspend fun createProfile(profile: Profile) {
@@ -18,6 +19,21 @@ class ProfileRepositoryImpl: ProfileRepository {
 
     override suspend fun getUserProfile(): Profile {
         return supabase.postgrest["profile"].select(){
+            filter {
+                and {
+                    eq("user_id", getUserId())
+                }
+            }
+        }.decodeSingle<Profile>()
+    }
+
+    override suspend fun getUserPay(): Profile {
+        return supabase.postgrest["profile"].select(
+            columns = Columns.list(
+                "name",
+                "address"
+            )
+        ) {
             filter {
                 and {
                     eq("user_id", getUserId())

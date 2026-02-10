@@ -58,4 +58,9 @@
     <string name="choose_countrytype">Выберите страну</string>
     <string name="choose_coffee_type">Выберите сорт кофе</string>
     <string name="choose_additive">Выберите добавку</string>
+    <string name="coffeeman_enciclopedy">Энциклопедия кофемана</string>
+    <string name="skip">Пропустить</string>
+    <string name="my_order">Мой заказ</string>
+    <string name="total_suma">Итоговая сумма</string>
+    <string name="pay_order">Оплата заказа</string>
 </resources>
