@@ -39,4 +39,23 @@
     <string name="loyalty_card">Карта лояльности</string>
     <string name="my_points">Мои баллы:</string>
     <string name="pay_points">Оплатить баллами</string>
+    <string name="order">Заказ</string>
+    <string name="capuccino">Капучино</string>
+    <string name="ristretto">Ристретто</string>
+    <string name="one">Один</string>
+    <string name="two">Два</string>
+    <string name="na_meste_na_vinos">На месте / навынос</string>
+    <string name="volume">Объем, мл</string>
+    <string name="prepare_to_time">Приготовить\nк определенному времени\nсегодня?</string>
+    <string name="constructor_coffeeman">Конструктор кофемана</string>
+    <string name="total_sum">Итоговая сумма</string>
+    <string name="next">Далее</string>
+    <string name="choose_barista">Выберите бариста</string>
+    <string name="sort_coffee">Сорт кофе</string>
+    <string name="additives">Добавки</string>
+    <string name="order_constructor">Конструктор заказа</string>
+    <string name="choose_country">Выберите страну и сорт кофе</string>
+    <string name="choose_countrytype">Выберите страну</string>
+    <string name="choose_coffee_type">Выберите сорт кофе</string>
+    <string name="choose_additive">Выберите добавку</string>
 </resources>

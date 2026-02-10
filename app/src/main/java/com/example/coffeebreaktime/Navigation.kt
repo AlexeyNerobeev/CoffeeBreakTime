@@ -38,4 +38,22 @@ sealed class Navigation {
 
     @Serializable
     data object Reward: Navigation()
+
+    @Serializable
+    data object OrderOptions: Navigation()
+
+    @Serializable
+    data object Designer: Navigation()
+
+    @Serializable
+    data object Barista: Navigation()
+
+    @Serializable
+    data object Country: Navigation()
+
+    @Serializable
+    data object CoffeeTypeScreen: Navigation()
+
+    @Serializable
+    data object AdditivesScreen: Navigation()
 }

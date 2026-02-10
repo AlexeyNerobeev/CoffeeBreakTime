@@ -40,4 +40,23 @@
     <string name="loyalty_card">Loyalty Card</string>
     <string name="my_points">My points:</string>
     <string name="pay_points">Pay with points</string>
+    <string name="order">Order</string>
+    <string name="capuccino">Capuccino</string>
+    <string name="ristretto">Ristretto</string>
+    <string name="one">One</string>
+    <string name="two">Two</string>
+    <string name="na_meste_na_vinos">On-site / takeaway</string>
+    <string name="volume">Volume, ml</string>
+    <string name="prepare_to_time">Should cook\nfor a certain time\ntoday?</string>
+    <string name="constructor_coffeeman">Coffee lovers designer</string>
+    <string name="total_sum">Total amount</string>
+    <string name="next">Next</string>
+    <string name="choose_barista">Select a barista</string>
+    <string name="sort_coffee">Coffee type</string>
+    <string name="additives">Additives</string>
+    <string name="order_constructor">Order constructor</string>
+    <string name="choose_country">Select country and coffee variety</string>
+    <string name="choose_countrytype">Select country</string>
+    <string name="choose_coffee_type">Select coffee type</string>
+    <string name="choose_additive">Select additive</string>
 </resources>

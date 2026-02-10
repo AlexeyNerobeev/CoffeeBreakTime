@@ -13,6 +13,7 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import kotlin.concurrent.timer
 
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
@@ -55,7 +56,14 @@ data class ThemeColors(
     val menuBoxBackground: Color = Color(0xFF272D31),
     val profileIconsBackground: Color = Color(0xFFF7F8FB),
     val profileTitleColor: Color = Color(0x00183338).copy(alpha = 0.22f),
-    val profileMainText: Color = Color(0xFF324A59)
+    val profileMainText: Color = Color(0xFF324A59),
+    val orderOptionsTitle: Color = Color(0xFF001833),
+    val orderOptionsBox: Color = Color(0xFFF7F8FB),
+    val orderOptionsText: Color = Color(0xFF282828),
+    val timeBox: Color = Color(0x7676801F).copy(alpha = 0.12f),
+    val totalSumColor:Color = Color(0xFF001833),
+    val baristaBox: Color = Color.White,
+    val countryDescription: Color = Color(0xFF334855)
 )
 
 private val LocalTheme = staticCompositionLocalOf {
@@ -87,7 +95,14 @@ fun AppTheme(
             menuBoxBackground = Color(0xFF334855),
             profileIconsBackground = Color(0xFF444A4D),
             profileTitleColor = Color(0xFF4F7993),
-            profileMainText = Color(0xFFAAAAAA)
+            profileMainText = Color(0xFFAAAAAA),
+            orderOptionsTitle = Color(0xFFD9D9D9),
+            orderOptionsBox = Color.White,
+            orderOptionsText = Color(0xFF4F7993),
+            timeBox = Color(0x7676801F).copy(alpha = 0.12f),
+            totalSumColor = Color(0xFF61ADDD),
+            baristaBox = Color(0xFF334855),
+            countryDescription = Color(0xFFA1A1A1)
         )
     }else{
         ThemeColors(
@@ -109,7 +124,14 @@ fun AppTheme(
             menuBoxBackground = Color(0xFF272D31),
             profileIconsBackground = Color(0xFFF7F8FB),
             profileTitleColor = Color(0x00183338).copy(alpha = 0.22f),
-            profileMainText = Color(0xFF324A59)
+            profileMainText = Color(0xFF324A59),
+            orderOptionsTitle = Color(0xFF001833),
+            orderOptionsBox = Color(0xFFF7F8FB),
+            orderOptionsText = Color(0xFF282828),
+            timeBox = Color(0x7676801F).copy(alpha = 0.12f),
+            totalSumColor = Color(0xFF001833),
+            baristaBox = Color.White,
+            countryDescription = Color(0xFF334855)
         )
     }
 
