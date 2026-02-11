@@ -42,8 +42,8 @@ class ProfileRepositoryImpl: ProfileRepository {
         }.decodeSingle<Profile>()
     }
 
-    suspend fun getUserId(): String{
+    private suspend fun getUserId(): String{
         supabase.auth.awaitInitialization()
-        return supabase.auth.currentUserOrNull()?.id?: ""
+        return supabase.auth.currentUserOrNull()?.id ?: ""
     }
 }

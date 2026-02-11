@@ -19,6 +19,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
@@ -38,6 +39,12 @@ fun BottomNavigationBar(
             .padding(bottom = 22.dp)
             .fillMaxWidth()
             .height(64.dp)
+            .shadow(
+                elevation = 4.dp,
+                shape = RoundedCornerShape(20.dp),
+                clip = false,
+                spotColor = Color(0xFF324A591F).copy(alpha = 0.12f)
+            )
             .background(
                 color = Color.White,
                 shape = RoundedCornerShape(20.dp)
@@ -89,13 +96,18 @@ fun BottomNavigationBar(
             }
             IconButton(
                 onClick = {
-
+                    if(currentScreen != Navigation.MyOrderHistory){
+                        navController.navigate(Navigation.MyOrderHistory)
+                    }
                 }
             ) {
                 Icon(
                     painter = painterResource(R.drawable.order_icon),
                     contentDescription = null,
-                    tint = Color.Unspecified,
+                    tint = if (currentScreen == Navigation.MyOrderHistory)
+                        Color.Black
+                    else
+                        colorResource(R.color.bottomIcon),
                     modifier = Modifier
                         .size(21.dp)
                 )

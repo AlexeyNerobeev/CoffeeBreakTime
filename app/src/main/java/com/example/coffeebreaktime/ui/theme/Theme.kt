@@ -71,7 +71,11 @@ data class ThemeColors(
     val myOrderTotal: Color = Color(0x00183338).copy(alpha = 0.22f),
     val myOrderButton: Color = Color(0xFF324A59),
     val payPanel: Color = Color.White,
-    val payPanelAddress: Color = Color(0xFF001833)
+    val payPanelAddress: Color = Color(0xFF001833),
+    val payPanelSbp: Color = Color(0xFF00183338).copy(alpha = 0.22f),
+    val orderedColor: Color = Color(0xFF181D2D),
+    val orderIsConfYourOrder: Color = Color(0xFFAAAAAA),
+    val orderIsConfAddress: Color = Color.Black
 )
 
 private val LocalTheme = staticCompositionLocalOf {
@@ -118,7 +122,11 @@ fun AppTheme(
             myOrderTotal = Color(0xFF4F7993),
             myOrderButton = Color(0xFF334855),
             payPanel = Color(0xFF1D1D1D),
-            payPanelAddress = Color(0xFFA1A1A1)
+            payPanelAddress = Color(0xFFA1A1A1),
+            payPanelSbp = Color(0xFFA1A1A1),
+            orderedColor = Color(0xFFD9D9D9),
+            orderIsConfYourOrder = Color(0xFFA1A1A1),
+            orderIsConfAddress = Color(0xFFA1A1A1)
         )
     }else{
         ThemeColors(
@@ -155,7 +163,11 @@ fun AppTheme(
             myOrderTotal = Color(0x00183338).copy(alpha = 0.22f),
             myOrderButton = Color(0xFF324A59),
             payPanel = Color.White,
-            payPanelAddress = Color(0xFF001833)
+            payPanelAddress = Color(0xFF001833),
+            payPanelSbp = Color(0xFF00183338).copy(alpha = 0.22f),
+            orderedColor = Color(0xFF181D2D),
+            orderIsConfYourOrder = Color(0xFFAAAAAA),
+            orderIsConfAddress = Color.Black
         )
     }
 

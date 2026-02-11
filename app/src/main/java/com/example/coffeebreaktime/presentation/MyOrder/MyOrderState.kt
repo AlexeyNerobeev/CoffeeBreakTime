@@ -9,5 +9,7 @@ data class MyOrderState(
     val total: Int = 0,
     val pay: Boolean = false,
     val name: String = "",
-    val address: String = ""
+    val address: String = "",
+    val selectSbp: Boolean = true,
+    val selectBankCard: Boolean = false
 )

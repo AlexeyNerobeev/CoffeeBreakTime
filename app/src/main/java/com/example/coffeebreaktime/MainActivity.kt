@@ -16,6 +16,7 @@ import androidx.navigation.NavHost
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.toRoute
 import com.example.coffeebreaktime.presentation.Additives.AdditivesScreen
 import com.example.coffeebreaktime.presentation.Authorization.AuthorizationScreen
 import com.example.coffeebreaktime.presentation.Barista.BaristaScreen
@@ -27,6 +28,8 @@ import com.example.coffeebreaktime.presentation.ForgotPassword.ForgotPasswordScr
 import com.example.coffeebreaktime.presentation.Menu.MenuScreen
 import com.example.coffeebreaktime.presentation.MyOrder.MyOrderScreen
 import com.example.coffeebreaktime.presentation.MyOrderCurrent.MyOrderCurrentScreen
+import com.example.coffeebreaktime.presentation.MyOrderHistory.MyOrderHistoryScreen
+import com.example.coffeebreaktime.presentation.OrderIsConfirmed.OrderIsConfirmedScreen
 import com.example.coffeebreaktime.presentation.OrderOptions.OrderOptionsScreen
 import com.example.coffeebreaktime.presentation.Profile.ProfileScreen
 import com.example.coffeebreaktime.presentation.Registration.RegistrationScreen
@@ -109,6 +112,13 @@ class MainActivity : ComponentActivity() {
                     }
                     composable<Navigation.MyOrder> {
                         MyOrderScreen(navController)
+                    }
+                    composable<Navigation.OrderIsConfirmed> { backStackEntry ->
+                        val route = backStackEntry.toRoute<Navigation.OrderIsConfirmed>()
+                        OrderIsConfirmedScreen(navController, name = route.name, address = route.address)
+                    }
+                    composable<Navigation.MyOrderHistory> {
+                        MyOrderHistoryScreen(navController)
                     }
                 }
             }

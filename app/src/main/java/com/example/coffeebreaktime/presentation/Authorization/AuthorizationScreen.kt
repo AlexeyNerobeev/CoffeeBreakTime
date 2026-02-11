@@ -21,6 +21,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -45,6 +46,11 @@ import com.example.coffeebreaktime.ui.theme.Theme
 @Composable
 fun AuthorizationScreen(navController: NavController, vm: AuthorizationVM = hiltViewModel()) {
     val state = vm.state.value
+    LaunchedEffect(state.isComplete) {
+        if(state.isComplete){
+            navController.navigate(Navigation.StartUpScreen)
+        }
+    }
     val tfList = listOf(
         TextFieldData(
             value = state.email,
@@ -129,7 +135,6 @@ fun AuthorizationScreen(navController: NavController, vm: AuthorizationVM = hilt
                 IconButton(
                     onClick = {
                         vm.onEvent(AuthorizationEvent.SignIn)
-                        navController.navigate(Navigation.StartUpScreen)
                     },
                     colors = IconButtonDefaults.iconButtonColors(
                         containerColor = colorResource(R.color.mainColor)

@@ -59,9 +59,19 @@
     <string name="choose_countrytype">Select country</string>
     <string name="choose_coffee_type">Select coffee type</string>
     <string name="choose_additive">Select additive</string>
-    <string name="coffeeman_enciclopedy">Энциклопедия кофемана</string>
-    <string name="skip">Пропустить</string>
-    <string name="my_order">Мой заказ</string>
-    <string name="total_suma">Итоговая сумма</string>
-    <string name="pay_order">Оплата заказа</string>
+    <string name="coffeeman_enciclopedy">Encyclopedia of coffee lovers</string>
+    <string name="skip">Skip</string>
+    <string name="my_order">My order</string>
+    <string name="total_suma">Total sum</string>
+    <string name="pay_order">Order payment</string>
+    <string name="pay_online">Online payment</string>
+    <string name="sbp">SBP</string>
+    <string name="bank_card">Bank card</string>
+    <string name="total_stoimost">Total amount</string>
+    <string name="paynow">Pay\nnow</string>
+    <string name="ordered">Ordered</string>
+    <string name="your_order">, Your order N 002 has been successfully placed.</string>
+    <string name="order_prepare_to">"The order will be ready today\nby 18:10 at the address"</string>
+    <string name="show_qr">Present your personal QR code\nat the coffee shop to receive your order.</string>
+    <string name="order_history">Order history</string>
 </resources>

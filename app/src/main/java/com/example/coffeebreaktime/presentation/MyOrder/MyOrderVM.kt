@@ -57,6 +57,27 @@ class MyOrderVM @Inject constructor(
                     pay = !state.value.pay
                 )
             }
+
+            MyOrderEvent.SelectBankCard -> {
+                _state.value = state.value.copy(
+                    selectBankCard = !state.value.selectBankCard
+                )
+                if(state.value.selectBankCard){
+                    _state.value = state.value.copy(
+                        selectSbp = false
+                    )
+                }
+            }
+            MyOrderEvent.SelectSbp -> {
+                _state.value = state.value.copy(
+                    selectSbp = !state.value.selectSbp
+                )
+                if(state.value.selectBankCard){
+                    _state.value = state.value.copy(
+                        selectBankCard = false
+                    )
+                }
+            }
         }
     }
 }

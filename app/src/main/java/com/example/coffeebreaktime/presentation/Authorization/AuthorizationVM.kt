@@ -41,6 +41,9 @@ class AuthorizationVM @Inject constructor(
                 viewModelScope.launch(Dispatchers.IO) {
                     try {
                         authUseCase.invoke(User(state.value.email, state.value.password))
+                        _state.value = state.value.copy(
+                            isComplete = true
+                        )
                     } catch (ex: Exception){
                         Log.e("supabase", ex.message.toString())
                     }
