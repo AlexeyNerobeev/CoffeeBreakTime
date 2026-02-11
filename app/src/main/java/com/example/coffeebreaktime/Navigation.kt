@@ -56,4 +56,13 @@ sealed class Navigation {
 
     @Serializable
     data object AdditivesScreen: Navigation()
+
+    @Serializable
+    data object MyOrder: Navigation()
+
+    @Serializable
+    data class OrderIsConfirmed(val name: String, val address: String): Navigation()
+
+    @Serializable
+    data object MyOrderHistory: Navigation()
 }

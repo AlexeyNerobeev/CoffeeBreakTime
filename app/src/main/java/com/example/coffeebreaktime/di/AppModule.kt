@@ -7,6 +7,7 @@ import com.example.coffeebreaktime.data.repositoryImplementation.BaristaReposito
 import com.example.coffeebreaktime.data.repositoryImplementation.CoffeeRepositoryImpl
 import com.example.coffeebreaktime.data.repositoryImplementation.CoffeeTypeRepositoryImpl
 import com.example.coffeebreaktime.data.repositoryImplementation.CountryRepositoryImpl
+import com.example.coffeebreaktime.data.repositoryImplementation.OrderRepositoryImpl
 import com.example.coffeebreaktime.data.repositoryImplementation.ProfileRepositoryImpl
 import com.example.coffeebreaktime.domain.UseCase.AuthUseCase
 import com.example.coffeebreaktime.domain.UseCase.CreateProfileUseCase
@@ -22,6 +23,7 @@ import com.example.coffeebreaktime.domain.repository.BaristaRepository
 import com.example.coffeebreaktime.domain.repository.CoffeeRepository
 import com.example.coffeebreaktime.domain.repository.CoffeeTypeRepository
 import com.example.coffeebreaktime.domain.repository.CountryRepository
+import com.example.coffeebreaktime.domain.repository.OrderRepository
 import com.example.coffeebreaktime.domain.repository.ProfileRepository
 import dagger.Module
 import dagger.Provides
@@ -72,6 +74,12 @@ object AppModule {
     @Singleton
     fun provideAdditivesRepository(): AdditivesRepository{
         return AdditivesRepositoryImpl()
+    }
+
+    @Provides
+    @Singleton
+    fun provideOrderRepository(): OrderRepository{
+        return OrderRepositoryImpl()
     }
 
     @Provides

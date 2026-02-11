@@ -65,7 +65,7 @@ class RegistrationVM @Inject constructor(
                             name = state.value.name,
                             phone = state.value.phone,
                             email = state.value.email,
-                            address = "-"
+                            address = "г. Оренбург, ул. Чкалова 32"
                         ))
                         _state.value = state.value.copy(
                             isComplete = true

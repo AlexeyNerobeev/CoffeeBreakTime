@@ -63,7 +63,19 @@ data class ThemeColors(
     val timeBox: Color = Color(0x7676801F).copy(alpha = 0.12f),
     val totalSumColor:Color = Color(0xFF001833),
     val baristaBox: Color = Color.White,
-    val countryDescription: Color = Color(0xFF334855)
+    val countryDescription: Color = Color(0xFF334855),
+    val myOrder: Color = Color(0xFF001833),
+    val myOrderBox: Color = Color(0xFFF7F8FB),
+    val myOrderDescription: Color = Color(0xFF757575),
+    val myOrderCurrent: Color = Color.Black.copy(alpha = 0.57f),
+    val myOrderTotal: Color = Color(0x00183338).copy(alpha = 0.22f),
+    val myOrderButton: Color = Color(0xFF324A59),
+    val payPanel: Color = Color.White,
+    val payPanelAddress: Color = Color(0xFF001833),
+    val payPanelSbp: Color = Color(0xFF00183338).copy(alpha = 0.22f),
+    val orderedColor: Color = Color(0xFF181D2D),
+    val orderIsConfYourOrder: Color = Color(0xFFAAAAAA),
+    val orderIsConfAddress: Color = Color.Black
 )
 
 private val LocalTheme = staticCompositionLocalOf {
@@ -102,7 +114,19 @@ fun AppTheme(
             timeBox = Color(0x7676801F).copy(alpha = 0.12f),
             totalSumColor = Color(0xFF61ADDD),
             baristaBox = Color(0xFF334855),
-            countryDescription = Color(0xFFA1A1A1)
+            countryDescription = Color(0xFFA1A1A1),
+            myOrder = Color(0xFFD9D9D9),
+            myOrderBox = Color(0xFF334855),
+            myOrderDescription = Color(0xFFA1A1A1),
+            myOrderCurrent = Color(0xFFD9D9D9),
+            myOrderTotal = Color(0xFF4F7993),
+            myOrderButton = Color(0xFF334855),
+            payPanel = Color(0xFF1D1D1D),
+            payPanelAddress = Color(0xFFA1A1A1),
+            payPanelSbp = Color(0xFFA1A1A1),
+            orderedColor = Color(0xFFD9D9D9),
+            orderIsConfYourOrder = Color(0xFFA1A1A1),
+            orderIsConfAddress = Color(0xFFA1A1A1)
         )
     }else{
         ThemeColors(
@@ -131,7 +155,19 @@ fun AppTheme(
             timeBox = Color(0x7676801F).copy(alpha = 0.12f),
             totalSumColor = Color(0xFF001833),
             baristaBox = Color.White,
-            countryDescription = Color(0xFF334855)
+            countryDescription = Color(0xFF334855),
+            myOrder = Color(0xFF001833),
+            myOrderBox = Color(0xFFF7F8FB),
+            myOrderDescription = Color(0xFF757575),
+            myOrderCurrent = Color.Black.copy(alpha = 0.57f),
+            myOrderTotal = Color(0x00183338).copy(alpha = 0.22f),
+            myOrderButton = Color(0xFF324A59),
+            payPanel = Color.White,
+            payPanelAddress = Color(0xFF001833),
+            payPanelSbp = Color(0xFF00183338).copy(alpha = 0.22f),
+            orderedColor = Color(0xFF181D2D),
+            orderIsConfYourOrder = Color(0xFFAAAAAA),
+            orderIsConfAddress = Color.Black
         )
     }
 

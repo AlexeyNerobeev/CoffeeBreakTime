@@ -31,3 +31,9 @@ val montserrat = FontFamily(
         resId = R.font.montserrat_regular
     )
 )
+
+val inter = FontFamily(
+    Font(
+        resId = R.font.inter_regular
+    )
+)
